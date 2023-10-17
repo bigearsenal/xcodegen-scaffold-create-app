@@ -19,7 +19,9 @@ clone_and_configure() {
     sed -i.bak "s/Scaffold/$app_name/gI" project.yml
     rm project.yml.bak
 
-    # info.bigears.Scaffold
+    # Find and replace "Scaffold" with the provided app name in .gitignore
+    sed -i.bak "s/Scaffold/$app_name/gI" .gitignore
+    rm .gitignore.bak
 
     # Rename the ScaffoldKit in the Packages directory to <app_name>Kit
     mv "Packages/ScaffoldKit" "Packages/${app_name}Kit"
